@@ -10,7 +10,7 @@ class Email():
     def format_addr(self,s):
         name,addr = parseaddr(s)
         return formataddr((Header(name,'utf-8').encode(),addr))
-    def send_email(self,from_addr='51170601007@stu.ecnu.edu.cn',password='Guan123456',to_addr='1587753354@qq.com',smtp_server='smtp.exmail.qq.com',mimetext=None,msg_from='Guanxiang Guan',msg_to='Guanxiang Guan',msg_subject=None):
+    def send_email(self,from_addr='你的发件箱账户',password='你的发件箱密码',to_addr='收件箱账户',smtp_server='邮箱服务器',mimetext=None,msg_from='发件人称呼',msg_to='收件人称呼',msg_subject=None):
         msg = MIMEText(mimetext,'plain','utf-8')
         msg['From'] = self.format_addr(msg_from+' '+'<%s>'%from_addr)
         msg['To'] = self.format_addr(msg_to+' '+'<%s>'%to_addr)
